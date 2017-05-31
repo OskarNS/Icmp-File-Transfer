@@ -46,6 +46,7 @@ if __name__ == '__main__':
             demo = sys.argv[3]
             print "Demo mode..."
         except:
+            demo = 0
             pass
 
 
