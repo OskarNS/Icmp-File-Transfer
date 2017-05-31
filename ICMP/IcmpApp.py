@@ -54,9 +54,9 @@ class IcmpSender (IcmpApp):
 
 class IcmpReceiver (IcmpApp):
     
-    def __init__ (self, file_to_receive):
+    def __init__ (self):
         super(IcmpReceiver, self).__init__()
-        self._file = open(file_to_receive, 'w')
+        #self._file = open(file_to_receive, 'w')
 
     def receive (self):
         buff = []
@@ -68,7 +68,7 @@ class IcmpReceiver (IcmpApp):
         str_buff = ''
         for elem in buff:
             str_buff += elem[1]
-        self._file.write(str_buff) 
+        #self._file.write(str_buff) 
         print "Received" + str_buff
 
 
