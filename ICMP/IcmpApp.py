@@ -41,11 +41,13 @@ class IcmpSender (IcmpApp):
 
     def send (self, dst_addr):
         seq_n = 0
+        uBound = 0
         while True: 
 
-            data = self._message #self._file.read(56)''
+            data = self._message[uBound:uBound+56] #self._file.read(56)''
+            uBound += 56
             print "data="+data
-            if not data:
+            if uBound+56 >= len(data):
                 packet = IcmpPacket(ECHO_REQUEST, seq_n=seq_n, payload=data, 
                                     code=2)
                 self.socket.sendto(packet, dst_addr)
