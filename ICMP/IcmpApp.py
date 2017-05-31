@@ -27,8 +27,9 @@ class IcmpApp (object):
         return self
 
     def __exit__ (self, type, value, traceback):
-        if self._file is not None and not self._file.closed:
-            self._file.closed
+        pass
+        #if self._file is not None and not self._file.closed:
+            #self._file.closed
 
 
 class IcmpSender (IcmpApp):
