@@ -63,7 +63,7 @@ if __name__ == '__main__':
             else:
                 msg = raw_input()
             with IcmpSender(msg) as sender:
-                print "Sending message..."
+                #print "Sending message..."
                 sender.send(dst_addr)
 
     elif action == 'recv': 
