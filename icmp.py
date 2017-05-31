@@ -33,12 +33,12 @@ def show_usage ():
 if __name__ == '__main__':
     try:
         action = sys.argv[1]
-        name = sys.argv[2]
     except IndexError:
         show_usage()
 
     if action == 'send': 
         try:
+            name = sys.argv[2]
             dst_addr = sys.argv[3]
         except:
             show_usage()
