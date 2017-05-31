@@ -33,17 +33,18 @@ def show_usage ():
 if __name__ == '__main__':
     try:
         action = sys.argv[1]
+        name = sys.argv[2]
     except IndexError:
         show_usage()
 
     if action == 'send': 
         try:
-            dst_addr = sys.argv[2]
+            dst_addr = sys.argv[3]
         except:
             show_usage()
 
         try:
-            demo = sys.argv[3]
+            demo = sys.argv[4]
             print "Demo mode..."
         except:
             demo = 0
@@ -62,7 +63,7 @@ if __name__ == '__main__':
                 time.sleep(5)
             else:
                 msg = raw_input()
-            with IcmpSender(msg) as sender:
+            with IcmpSender(name + ": " + msg) as sender:
                 #print "Sending message..."
                 sender.send(dst_addr)
 
