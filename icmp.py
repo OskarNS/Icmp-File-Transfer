@@ -16,6 +16,7 @@
 #    along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import sys
+import time
 
 from ICMP.IcmpApp import IcmpSender, IcmpReceiver
 
@@ -58,6 +59,7 @@ if __name__ == '__main__':
                     break
                 msg = msgs[i]
                 i+=1
+                time.sleep(5)
             else:
                 msg = raw_input()
             with IcmpSender(msg) as sender:
