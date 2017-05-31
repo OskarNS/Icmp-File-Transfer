@@ -32,13 +32,22 @@ def show_usage ():
 if __name__ == '__main__':
     try:
         action = sys.argv[1]
-        filename = sys.argv[2]
+        ip = sys.argv[2]
     except IndexError:
         show_usage()
 
     if action == 'send': 
-        try:    dst_addr = filename
-        except: show_usage()
+        try:
+            dst_addr = ip
+        except:
+            show_usage()
+
+        try:
+            demo = sys.argv[3]
+            print "Demo mode..."
+        except:
+            pass
+
 
         while True:
             msg = raw_input()
