@@ -44,7 +44,7 @@ if __name__ == '__main__':
             sender.send(dst_addr)
 
     elif action == 'recv': 
-        with IcmpReceiver(filename) as receiver:
+        with IcmpReceiver() as receiver:
             receiver.receive()
 
 
