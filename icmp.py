@@ -37,11 +37,13 @@ if __name__ == '__main__':
         show_usage()
 
     if action == 'send': 
-        try:    dst_addr = sys.argv[3]
+        try:    dst_addr = filename
         except: show_usage()
 
-        with IcmpSender(filename) as sender:
-            sender.send(dst_addr)
+        while True:
+            msg = raw_input()
+            with IcmpSender(msg) as sender:
+                sender.send(dst_addr)
 
     elif action == 'recv': 
         while True:
