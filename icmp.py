@@ -44,7 +44,8 @@ if __name__ == '__main__':
             sender.send(dst_addr)
 
     elif action == 'recv': 
-        with IcmpReceiver() as receiver:
-            receiver.receive()
+        while True:
+            with IcmpReceiver() as receiver:
+                receiver.receive()
 
 
