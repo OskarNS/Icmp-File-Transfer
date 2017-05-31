@@ -74,5 +74,5 @@ class IcmpReceiver (IcmpApp):
         for elem in buff:
             str_buff += elem[1]
         #self._file.write(str_buff) 
-        print "Received: " + str_buff[0:len(str_buff)/2]
+        print str_buff[0:len(str_buff)/2]
 
