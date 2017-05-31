@@ -48,8 +48,6 @@ if __name__ == '__main__':
         except:
             pass
 
-        if demo:
-
 
         msgs = ["Hejsa", "Svaret til opgave 17 er b"]
         i = 0
