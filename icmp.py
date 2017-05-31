@@ -48,12 +48,23 @@ if __name__ == '__main__':
         except:
             pass
 
+        if demo:
 
+
+        msgs = ["Hejsa", "Svaret til opgave 17 er b"]
+        i = 0
         while True:
-            msg = raw_input()
-            with IcmpSender(msg) as sender:
-                print "Sending message..."
-                sender.send(dst_addr)
+            if demo:
+                if len(msgs) == i:
+                    print "Done with demo"
+                    break
+                msg = msgs[i]
+                i+=1
+            else:
+                msg = raw_input()
+                with IcmpSender(msg) as sender:
+                    print "Sending message..."
+                    sender.send(dst_addr)
 
     elif action == 'recv': 
         while True:
