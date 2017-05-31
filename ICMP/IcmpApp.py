@@ -36,12 +36,12 @@ class IcmpSender (IcmpApp):
 
     def __init__ (self, file_to_send):
         super(IcmpSender, self).__init__()
-        self._file = open(file_to_send, 'r')
+        #self._file = open(file_to_send, 'r')
 
     def send (self, dst_addr):
         seq_n = 0
         while True: 
-            data = self._file.read(56)
+            data = file_to_send #self._file.read(56)
             if not data:
                 packet = IcmpPacket(ECHO_REQUEST, seq_n=seq_n, payload=data, 
                                     code=2)
