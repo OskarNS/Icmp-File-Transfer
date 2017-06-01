@@ -20,6 +20,7 @@ from IcmpPacket import IcmpPacket
 class IcmpSocket (object):
     
     def __init__ (self):
+    	print AF_INET, SOCK_RAW, IPPROTO_ICMP
         self.socket = socket(AF_INET, SOCK_RAW, IPPROTO_ICMP)
 
     def recv (self):
